@@ -1,0 +1,169 @@
+<!doctype <html>
+<html>
+<head>
+   <title>Digital Naturalist-Image classification</title>
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Rancho&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+  *
+  {
+   margin:0;
+   padding:0;
+   box-sizing: border-box;
+   font-family: 'poppins', sans-serif;
+  }
+  body
+  {
+   overflow-x: hidden;
+   background: #fff;
+   min-height: 100vh;
+  }
+  #header
+  {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   padding: 30px 100px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   z-index: 10000;
+  }
+  #header .logo
+  {
+  color: #094b65;
+  font-weight: 700;
+  font-size: 2em;
+  text-decoration: none;
+  }
+  #header ul
+  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  #header ul li
+  {
+  list-style: none;
+  margin-left: 20px;
+  }
+  #header ul li a
+  {
+  text-decoration: none;
+  padding: 6px 15px;
+  color: #094b65;
+  border-radius: 20px;
+  }
+  #header ul li a:hover,
+  #header ul li a.active
+  {
+  background: #094b65;
+  color: #fff;
+  }
+  section
+  {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  section::before
+  {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #094b65,transparent);
+  
+  }
+  section img
+  {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  }
+  section #text
+  {
+  position: absolute;
+  color: #094b65;
+  font-size: 10vw;
+  text-align: center;
+  line-height: 0.55em;
+  font-family: 'Rancho', cursive;
+  text-align: center;
+  transform: translateY(-50%);
+  }
+  section #text span
+  {
+  font-size: 0.20em;
+  letter-spacing: 2px;
+  font-weight: 400;
+  font-family: 'poppins', sans-serif;
+  text-align: center;
+  }
+  #btn
+  {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 30px;
+  background: #fff;
+  color: #094b65;
+  font-size: 1.2em;
+  font-weight: 500;
+  letter-spacing: 2px;
+  border-radius: 40px;
+  transform: translateY(100px);
+  }
+  .sec
+  {
+  position: relative;
+  padding: 100px;
+  background: #094b65;
+  }
+  .sec h2
+  {
+  font-size: 2.5em;
+  color: #fff;
+  margin-bottom: 10px;
+  }
+  .sec p
+  {
+  text-align: center;
+  color:#fff;
+  }
+</style>
+<body>
+  <header id="header">
+    <a href="#" class="logo">DnA</a>
+    <ul>
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#About">About</a></li>
+      <li><a href="{{ url_for('login')}}">login</a></li>
+      <li><a href="{{ url_for('reg')}}">Regsitration</a></li>
+    </ul>
+   </header>
+   <section>
+     <h1 id="text"><span>It's time for a new</span><br>Adventure</h1>
+     <img src="{{url_for('static',filename ='bird1.png')}}" id="bird1">
+     <img src="{{url_for('static',filename ='bird2.png')}}" id="bird2">
+     <img src="{{url_for('static',filename ='forest.png')}}" id="forest">
+     <a href="{{ url_for('explore')}}" id="btn">Explore</a>
+     <img src="{{url_for('static',filename ='rocks.png')}}" id="rocks">
+     <img src="{{url_for('static',filename ='water.png')}}" id="water">
+   </section>
+   <div class="sec" id="About">
+        <h2 >About of Flora & Fauna</h2>
+          <p>Flora is the name given to the collective plant life that grows or once grew in a certain area or during a given time period. It usually refers to the native plant life present but does include new species that have been introduced as well. Flora and fauna of the earth have names derived from Latin.<br><br>Fauna, on the other hand, is the name given to collective animal life that lives or was once found in a certain area or time period. In Latin, Fauna is derived from three different sources. Fauna by itself was the name of a Roman goddess representing fertility and the earth, and Faunus was another Roman god. And then there were fauns, which were known to be forest spirits.</p>
+   </div>  
+ </body>
+</html>
